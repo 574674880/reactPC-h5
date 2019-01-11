@@ -312,7 +312,7 @@ body{
 }
 .fonter{
     background-color:#2e2e2e;
-    position: absolute;
+    // position: absolute;
     left: 0;bottom:  0;
     width: 100%;
     .fonterBox{
@@ -472,8 +472,6 @@ $ora:#d8880f;
             textarea::-webkit-input-placeholder {
                 /* placeholder颜色  */
                 color: #dddddd;
-                /* placeholder字体大小  */
-                font-size: 18px;
               }
             
         }
@@ -515,7 +513,7 @@ $ora:#d8880f;
             text-indent: 115px;
             letter-spacing: 30px;
             border-radius: 10px;
-            margin: 0 auto;
+            margin: 0 auto 80px;
         }
     }
 }

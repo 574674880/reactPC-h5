@@ -32,11 +32,11 @@ class Footer extends Component {
                 <div className="w1200 fonterBox">
                     <p> 服务条款 @CoinMix 版权所有</p>
                     <div>
-                        <a href="/"> </a>
-                        <a href="/"> </a>
-                        <a href="/"> </a>
-                        <a href="/"> </a>
-                        <a href="/"> </a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
                     </div>
                 </div>
             </div>

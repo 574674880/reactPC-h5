@@ -25,6 +25,8 @@ class Header extends Component {
             })
         }
     }
+    link(i){
+    }
     render() {
         let href = window.location.href;
         let index = 0;
@@ -39,14 +41,14 @@ class Header extends Component {
             index = 3
         }
         return (
-            <div className={"nav enav" + (isPC() ? "" : " navIs")}>
+            <div className={"nav "+(index===0?'':'enav') + (isPC() ? "" : " navIs")}>
                 <div className="w1200 navAuto">
-                    <Link className='logo' to='/'></Link>
+                    <Link className='logo' onClick={this.link.bind(this,0)}  to='/'></Link>
                     <div id="nav">
                         <a id="down" className={isactive ? "navdown" : ""} onClick={this.download.bind(this)} href="/">产品下载</a>
-                        <Link className={index === 1 ? 'active' : ''} to='/question'>常见问题</Link>
-                        <Link className={index === 2 ? 'active' : ''} to='/contact'>联系我们</Link>
-                        <Link className={index === 3 ? 'active' : ''} to='/feedback'>意见反馈</Link>
+                        <Link onClick={this.link.bind(this,1)} className={index === 1 ? 'active' : ''} to='/question'>常见问题</Link>
+                        <Link onClick={this.link.bind(this,2)} className={index === 2 ? 'active' : ''} to='/contact'>联系我们</Link>
+                        <Link onClick={this.link.bind(this,3)} className={index === 3 ? 'active' : ''} to='/feedback'>意见反馈</Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.min.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Index from './components/index'
 import Contact from './components/contact'
 import Question from './components/question';
@@ -15,14 +15,14 @@ class App extends Component {
   render() {
     // const Route = require('react-router-dom').Route
     return (
-      <BrowserRouter>
+      <Router>
         <Switch>
           <Route exact path="/" component={Index} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/question" component={Question} />
           <Route exact path="/feedback" component={Feedback}></Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

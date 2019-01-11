@@ -65,7 +65,8 @@ class Index extends Component {
             document.addEventListener('DOMMouseScroll', this.scroll.bind(this), false)
         }
         setTimeout(function () {
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }, 700)
         this.widthIphone()
         window.onresize = () => {
@@ -73,7 +74,6 @@ class Index extends Component {
         }
         document.onkeydown = (event) => {
             var e = event || window.event || arguments.callee.caller.arguments[0];
-            console.log(e.keyCode)
             if (e.keyCode === 33 || e.keyCode === 38) {
                 e.wheelDelta = 120
                 this.scroll()
@@ -88,6 +88,10 @@ class Index extends Component {
         document.onmousewheel = ''
         window.onresize = ''
     }
+    componentDidUpdate(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
     render() {
         let { offsetwidth, offsetheight, fullPage } = this.state;
         let ispc = isPC()
@@ -95,6 +99,8 @@ class Index extends Component {
             'width': offsetwidth,
             'height': offsetheight,
         }
+        document.body.scrollTop = 0;
+         document.documentElement.scrollTop = 0;
         return (
             <div className={"fullpage " + (ispc ? '' : ' iphoneStyle')} style={{ 'transform': 'translate(0,' + (-offsetheight * fullPage) + 'px)' }}>
                 <div className='section page1' style={sectionStyle}>
