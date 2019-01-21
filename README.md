@@ -1,6 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## "homepage": "./",
+package.json配置文件添加homepage。
+## import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+记得打包时候需要用HashRouter
 
 In the project directory, you can run:
 

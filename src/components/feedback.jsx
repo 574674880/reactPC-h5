@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from '../header';
 import Footer from '../footer';
 import axios from 'axios';
-import { isPC } from '../config'
+import { INTERFCE,isPC } from '../config'
 class Feedback extends Component {
     constructor(porps) {
         super(porps)
@@ -10,7 +10,8 @@ class Feedback extends Component {
             valleng: 300,
             val: '',
             type: 2,
-            tel: ''
+            tel: '',
+            ispc:isPC()
         }
     }
     changeArea(event) {
@@ -41,21 +42,21 @@ class Feedback extends Component {
         let _this = this
         axios({
             method: 'post',
-            url: 'https://www.coinmix.im/wallet/my/add_pc_feedback',
+            url: INTERFCE,
             data: {
                 'type': type,
                 'content': val,
                 'phone': tel
             },
             // dataType:'json',
-            contentType: 'application/json',
-            headers: { 'Content-Type': 'application/json' }
+            // contentType: 'application/json',
+            // headers: { 'Content-Type': 'application/json' }
         }).then(function (res) {
             _this.setState({
                 val: '',
                 tel: ''
             })
-            if (res.data.msg == '成功') {
+            if (res.data.msg === '成功') {
                 alert('提交成功，谢谢反馈')
             } else {
                 alert(res.data.msg)
@@ -69,9 +70,18 @@ class Feedback extends Component {
             }
         })
     }
+    componentDidMount(){
+        window.onresize = () => {
+            this.setState({ispc:isPC()})
+        }
+    }
+    componentWillUnmount() {
+        window.onresize =''
+    }
     render() {
+        let {ispc} = this.state;
         return (
-            <div className={isPC() ? "" : "iphoneStyle"}>
+            <div className={ispc ? "" : "iphoneStyle"}>
                 <Header />
                 <div className="feedback">
                     <div className="speek">
@@ -126,7 +136,7 @@ class Feedback extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                <Footer ispc={this.state.ispc}/>
             </div>
         )
     }

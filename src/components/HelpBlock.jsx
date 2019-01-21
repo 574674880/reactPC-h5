@@ -15,7 +15,7 @@ class HelpBlock extends Component {
             for(let i = 0 ; i <postList.remarks.length ;i++){
                 ifremarks = (
                     <div key={i} className="note">
-                        <p className="ora"><span></span>备注：</p>
+                        <p className="ora">● 备注：</p>
                         <p>{postList.remarks[i]}</p>
                     </div>
                 )

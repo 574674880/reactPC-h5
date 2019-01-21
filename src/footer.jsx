@@ -20,24 +20,30 @@ class Footer extends Component {
         })
     }
     render() {
-        let {hei,whei}=this.state
-        let style={}
-        if(hei<whei){
-            style={
-                'position':'absolute'
+        let { hei, whei } = this.state
+        let { ispc } = this.props
+        let ifprops = ispc?ispc:isPC()
+        let style = {}
+        if (hei < whei) {
+            style = {
+                'position': 'absolute'
+            }
+        } else {
+            style = {
+                'position': 'static'
             }
         }
         return (
-            <div className={"fonter" + (isPC() ? "" : ' fonterIs')} style={style}>
+            <div className={"fonter" + (ifprops ? "" : ' fonterIs')} style={style}>
                 <div className="w1200 fonterBox">
                     <p> 服务条款 @CoinMix 版权所有</p>
-                    <div>
-                        <a href="javascript:;"></a>
-                        <a href="javascript:;"></a>
-                        <a href="javascript:;"></a>
-                        <a href="javascript:;"></a>
-                        <a href="javascript:;"></a>
-                    </div>
+                    <dl>
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                    </dl>
                 </div>
             </div>
         )

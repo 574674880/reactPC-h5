@@ -6,12 +6,21 @@ class Contact extends Component {
     constructor(porps) {
         super(porps)
         this.state ={
-
+            ispc:isPC()
         }
     }
+    componentDidMount(){
+        window.onresize = () => {
+            this.setState({ispc:isPC()})
+        }
+    }
+    componentWillUnmount() {
+        window.onresize = ''
+    }
     render() {
+        let {ispc} = this.state;
         return (
-            <div className={isPC()?"":"iphoneStyle"}>
+            <div className={ispc?"":"iphoneStyle"}>
                 <Header />
                 <div className='contact'>
                 <div className="w1200">
@@ -20,8 +29,8 @@ class Contact extends Component {
                         <div className="dn" id="map"></div>
                         <div>
                             <h2>北京科达众连区块链技术有限公司</h2>
-                            <p>地址：北京市朝阳区四惠桥南侧甲一号伊莎文化中心</p>
-                            <p>战略合作：xiejingyi@kedabeijing.com</p>
+                            {/* <p>地址：北京市朝阳区四惠桥南侧甲一号伊莎文化中心</p> */}
+                            <p>战略合作：coinmix@126.com</p>
                             <p>商务洽谈：微信号 wangningwxh</p>
                             {/* <p>原创投稿：微信号 tong19860208</p> */}
                         </div>
@@ -36,7 +45,7 @@ class Contact extends Component {
                     <p>> 构建无缝的DApp生态 </p>
                 </div>
                 </div>
-                <Footer />
+                <Footer ispc={this.state.ispc}/>
             </div>
         )
     }

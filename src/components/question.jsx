@@ -58,15 +58,25 @@ class Question extends Component {
                     '2、目前仅支持EOS，后续会陆续支持ETH等主流币种。'
                 ]
             }],
-            index: 0
+            index: 0,
+            ispc:isPC()
         }
     }
     listClick(i) {
         this.setState({ index: i })
     }
+    componentDidMount(){
+        window.onresize = () => {
+            this.setState({ispc:isPC()})
+        }
+    }
+    componentWillUnmount() {
+        window.onresize =''
+    }
     render() {
+        let {ispc} = this.state;
         return (
-            <div  className={isPC()?"":"iphoneStyle"}>
+            <div  className={ispc?"":"iphoneStyle"}>
                 <Header />
                 <div className="qcontent">
                     <div className="qcenter w1200">
@@ -95,7 +105,7 @@ class Question extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                <Footer ispc={this.state.ispc}/>
             </div>
         )
     }

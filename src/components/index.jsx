@@ -73,7 +73,7 @@ class Index extends Component {
             this.widthIphone()
         }
         document.onkeydown = (event) => {
-            var e = event || window.event || arguments.callee.caller.arguments[0];
+            var e = event || window.event;
             if (e.keyCode === 33 || e.keyCode === 38) {
                 e.wheelDelta = 120
                 this.scroll()

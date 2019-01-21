@@ -2,6 +2,14 @@
   padding: 0;
   margin: 0;
 }
+@font-face {
+    font-family: 'lamebrai';
+    src: url('img/FZLTCXHJW.TTF'); /* IE9 Compat Modes */
+    src: url('img/FZLTCXHJW.TTF') format('embedded-opentype'), /* IE6-IE8 */
+    url('img/FZLTCXHJW.TTF') format('woff'), /* Modern Browsers */
+    url('img/FZLTCXHJW.TTF')  format('truetype'), /* Safari, Android, iOS */
+    url('img/FZLTCXHJW.TTF') format('svg'); /* Legacy iOS */
+  }
 @mixin slate(){
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
@@ -12,7 +20,7 @@
 .nav{
   width: 100%;
   background: rgba(255, 255, 255, 0.15);
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   .logo{
       width: 1.16rem;
@@ -21,7 +29,7 @@
       background-size: 100% 100%;
   }
   .navAuto{
-      height: 0.8rem;
+      height: .65rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -93,6 +101,7 @@ body{
 }
 .page1{
     background-image: url(./img/bannerBack.jpg);
+    position: relative;
     .bannerBox{
         display: flex;
         flex-direction: row;
@@ -325,11 +334,11 @@ body{
             color: #fff; 
             font-size: 0.2rem;
         }
-        &>div{
+        &>dl{
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            a{
+            dd{
                 display: none;
                 position: relative;
                 text-decoration: none;
@@ -339,7 +348,7 @@ body{
                 background-position: 0,0;
             }
             
-            a:hover{
+            dd:hover{
                 background: url(./img/iconhover.png) no-repeat;
                 &:nth-child(4)::after{
                     position: absolute;
@@ -362,19 +371,19 @@ body{
                     background: url(./img/prw.png);
                 }
             }
-            a:nth-child(2){
+            dd:nth-child(2){
                 display: none;
                 background-position: -42px,0;
             }
-            a:nth-child(3){
+            dd:nth-child(3){
                 display: none;
                 background-position: -84px,0;
             }
-            a:nth-child(4){
+            dd:nth-child(4){
                 display: block;
                 background-position: -126px,0;
             }
-            a:nth-child(5){
+            dd:nth-child(5){
                 display: block;
                 background-position: -168px,0;
             }
@@ -618,16 +627,9 @@ $ora:#d8880f;
                         flex-direction: row;
                         align-items: center;
                         flex-wrap: nowrap;
-                        flex-basis: 95px;
-                        span{
-                            display: block;
-                            width: 9px;
-                            height: 9px;
-                            background: $ora;
-                            border-radius: 50%;
-                            float: left;
-                            margin:8px;
-                        }
+                        white-space: nowrap;
+                        flex-basis: 1.2rem;
+                     
                     }
                 }
             }
@@ -851,6 +853,7 @@ $ora:#d8880f;
             .answer{
                 width: 100%;
                 max-width: 100%;
+                margin-bottom: 2rem;
                 .title{
                     font-size: 0.76rem;
                     line-height: 1.5rem;
@@ -879,11 +882,11 @@ $ora:#d8880f;
             color: #fff; 
             font-size: 0.5rem;
         }
-        &>div{
+        &>dl{
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            a{
+            dd{
                 position: relative;
                 text-decoration: none;
                 background: url(./img/icon.png) no-repeat;
@@ -893,7 +896,7 @@ $ora:#d8880f;
                 background-position: 0,0;
             }
             
-            a:hover{
+            dd:hover{
                 background: url(./img/iconhover.png) no-repeat;
                 background-size: 438px 62px;
                 &:nth-child(4)::after{
@@ -917,16 +920,16 @@ $ora:#d8880f;
                     background: url(./img/prw.png);
                 }
             }
-            a:nth-child(2){
+            dd:nth-child(2){
                 background-position: -84px,0;
             }
-            a:nth-child(3){
+            dd:nth-child(3){
                 background-position: -168px,0;
             }
-            a:nth-child(4){
+            dd:nth-child(4){
                 background-position: -252px,0;
             }
-            a:nth-child(5){
+            dd:nth-child(5){
                 background-position: -336px,0;
             }
         }
