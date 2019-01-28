@@ -8,10 +8,6 @@ axios.defaults.dataType = 'json';
 /*IOS*/export const  IOS_DOWNLOAD = 'itms-services://?action=download-manifest&url=https://www.coinmix.im/app/coinMIX.plist'
 /*Android*/export const ANDROID_DOWNLOAD = 'http://13.230.106.93/coinMIX_1.0.0.apk'
 /*建议反馈请求接口*/export const INTERFCE = 'my/add_pc_feedback'
-
-
-
-
 // 判断用户端
 export const isPC =()=>{
         var userAgentInfo = navigator.userAgent;

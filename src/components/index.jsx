@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../header';
+import Canvas from './canvas';
 import Footer from '../footer';
 import { isPC } from '../config';
 class Index extends Component {
@@ -20,7 +21,7 @@ class Index extends Component {
     scroll(e) {
         e = e || window.event;
         e.preventDefault();
-        let {fullPageNum,fullPage} = this.state
+        let { fullPageNum, fullPage } = this.state
         if (fullPageNum) {
             return false;
         }
@@ -88,7 +89,7 @@ class Index extends Component {
         document.onmousewheel = ''
         window.onresize = ''
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
@@ -99,12 +100,22 @@ class Index extends Component {
             'width': offsetwidth,
             'height': offsetheight,
         }
+        let cst = {
+            'width':'100%',
+            'position':'absolute',
+            'left':'50%',
+            'bottom':'0.5rem',
+            'transform':' translate(-50%, 0)'
+   
+        }
         document.body.scrollTop = 0;
-         document.documentElement.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         return (
             <div className={"fullpage " + (ispc ? '' : ' iphoneStyle')} style={{ 'transform': 'translate(0,' + (-offsetheight * fullPage) + 'px)' }}>
                 <div className='section page1' style={sectionStyle}>
                     <Header />
+                    {/* <Canvas></Canvas> */}
+                    <canvas width="2560" height="1000" style={cst}></canvas>
                     <p className="backtext">C O I N M I X</p>
                     <div className={"w1200 bannerBox"}>
                         <div>

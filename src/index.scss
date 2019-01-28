@@ -99,10 +99,16 @@ body{
     justify-content: center;
     overflow: hidden;
 }
+canvas{
+    // width: 100%;
+    // height: 10rem;
+}
 .page1{
-    background-image: url(./img/bannerBack.jpg);
+    // background-image: url(./img/bannerBack.jpg);
+    background: black;
     position: relative;
     .bannerBox{
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
